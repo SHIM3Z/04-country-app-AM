@@ -1,3 +1,10 @@
-<country-search-input placeholder="Buscar por capital"></country-search-input>
+<country-search-input
+  placeholder="Buscar por capital"
+  (value)="query.set($event)"
+></country-search-input>
 
-<country-list></country-list>
+@if (countryResource.error()) {
+<h3 class="py-4">{{ countryResource.error() }}</h3>
+}@if (countryResource.hasValue()) {
+<country-list [conutries]="countryResource.value()"></country-list>
+}
