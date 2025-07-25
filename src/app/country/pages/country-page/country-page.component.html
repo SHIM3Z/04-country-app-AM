@@ -1,1 +1,15 @@
-<p>{{ country() }}</p>
+<!-- <p>{{ country() }}</p> -->
+<!-- <h1>{{ countryCode }}</h1> -->
+@if (contryResource.error()) {
+<app-not-found></app-not-found>
+}
+<!--  -->
+@if (contryResource.isLoading()) {
+<h1 class="text-3xl">Cargando ...</h1>
+}
+<!--  -->
+@if (contryResource.hasValue()) {
+<country-information-page
+  [country]="contryResource.value()"
+></country-information-page>
+}

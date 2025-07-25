@@ -6,5 +6,5 @@
 @if (countryResource.error()) {
 <h3 class="py-4">{{ countryResource.error() }}</h3>
 }@if (countryResource.hasValue()) {
-<country-list [conutries]="countryResource.value()"></country-list>
+<country-list [countries]="countryResource.value()"></country-list>
 }
